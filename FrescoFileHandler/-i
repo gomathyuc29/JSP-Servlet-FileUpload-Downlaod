@@ -1,0 +1,6 @@
+--2020-06-11 15:39:18--  http://localhost:8000/
+Resolving localhost (localhost)... 127.0.0.1
+Connecting to localhost (localhost)|127.0.0.1|:8000... failed: Connection refused.
+--2020-06-11 15:39:18--  http://refused/
+Resolving refused (refused)... failed: Name or service not known.
+wget: unable to resolve host address ‘refused’
