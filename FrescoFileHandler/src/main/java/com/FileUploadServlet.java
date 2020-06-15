@@ -52,8 +52,8 @@ public class FileUploadServlet extends HttpServlet {
 
 		          // Process the uploaded file items
 		          Iterator i = fileItems.iterator();
-		          String filePath="C:\\Stream software\\Software - Backup\\apache-tomcat-9.0.7\\webapps\\data\\";
-		          
+				
+		          String filepath=getServletContext().getRealPath("/");
 		          while ( i.hasNext () )
 		          {
 		             FileItem fi = (FileItem)i.next();
@@ -68,10 +68,10 @@ public class FileUploadServlet extends HttpServlet {
 		                // Write the file
 		                if( fileName.lastIndexOf("\\") >= 0 ) 
 		                {
-		                   file = new File( filePath + 
+							file = new File( filepath+
 		                   fileName.substring( fileName.lastIndexOf("\\"))) ;
 		                } else {
-		                   file = new File( filePath + 
+							file = new File( filepath+
 		                   fileName.substring(fileName.lastIndexOf("\\")+1)) ;
 		                }
 		                fi.write( file ) ;

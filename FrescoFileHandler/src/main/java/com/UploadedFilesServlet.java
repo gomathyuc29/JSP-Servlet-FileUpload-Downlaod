@@ -38,7 +38,8 @@ public class UploadedFilesServlet extends HttpServlet {
 		//Code to fetch all files from the given location
 		//put in a dto
 		//take it to ALLfILES.JSP
-		File[] files = new File("C:\\Stream software\\Software - Backup\\apache-tomcat-9.0.7\\webapps\\data\\").listFiles();
+		//String filepath=Paths.get(".").toAbsolutePath().normalize().toString();
+		File[] files = new File( getServletContext().getRealPath("/")).listFiles();
 		request.setAttribute("files", Arrays.asList(files));
 		request.getRequestDispatcher("/allfiles.jsp").forward(request, response);
 		

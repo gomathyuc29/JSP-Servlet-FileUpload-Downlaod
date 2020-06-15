@@ -37,11 +37,11 @@ public class FileDownloadServlet extends HttpServlet {
 		/*WRITE YOUR CODE HERE*/
 		PrintWriter pw=response.getWriter();
 		String filename = request.getParameter("fileName");  
-		  String filepath = "C:\\Stream software\\Software - Backup\\apache-tomcat-9.0.7\\webapps\\data\\";   
+		
 		  response.setContentType("APPLICATION/OCTET-STREAM");   
 		  response.setHeader("Content-Disposition","attachment; filename=\"" + filename + "\"");   
-		  
-		  java.io.FileInputStream fileInputStream=new java.io.FileInputStream(filepath + filename);  
+		  //String filePath=Paths.get("").toAbsolutePath().toString();
+		java.io.FileInputStream fileInputStream = new java.io.FileInputStream(getServletContext().getRealPath("/")+filename);  
 		            
 		  int i;   
 		  while ((i=fileInputStream.read()) != -1) {  
